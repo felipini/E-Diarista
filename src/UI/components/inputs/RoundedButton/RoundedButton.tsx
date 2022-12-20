@@ -1,5 +1,4 @@
-function RoundedButton(){
-    return <div>Meu Botão</div>;
-}
+import { RoundedButtonSlyled } from "./RoundedButton.styled"
 
-export default RoundedButton;
+
+export default RoundedButtonSlyled;
