@@ -3,7 +3,7 @@ import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import { Link as MuiLink, LinkProps as MuiLinkProps, ButtonProps} from "@mui/material";  
 import Router from "next/router"; 
 
-interface LinkProps {
+export interface LinkProps {
     href: string;
     mui?: MuiLinkProps | ButtonProps;
     next?: NextLinkProps;

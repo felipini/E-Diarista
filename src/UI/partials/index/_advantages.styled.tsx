@@ -1,0 +1,79 @@
+import { Avatar, List, ListItemText } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import theme from "UI/themes/light-theme";
+
+export const GradientBackground = styled("section")`
+    padding-bottom: ${({ theme }) => theme.spacing(20)};
+    background: ${({ theme }) => `linear-gradient(180deg, 
+    ${ theme.palette.secondary.main } 0%, 
+    ${ theme.palette.primary.main } 100%)`};
+
+    color: ${({ theme }) => theme.palette.primary.contrastText };
+`;
+
+export const SectionTitle = styled("h2")`
+    position: relative;
+    font-weight: normal;
+    font: ${({ theme }) => theme.typography.h6.fontSize};
+    margin: 0;
+    padding: ${({ theme }) => theme.spacing(7, 0, 4)};
+    text-align: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 44px;
+        height: 2px;
+        background-color: currentColor;
+        left: 50%;
+        bottom: ${({ theme }) => theme.spacing(2)};
+        transform: translateX(-50%);
+    }
+
+    ${({ theme }) => theme.breakpoints.up("md")}{
+        font-size: ${({ theme }) => theme.typography.h5.fontSize};
+        padding: ${({ theme }) => theme.spacing(15, 0, 13)};
+
+        &::after {
+            bottom: ${({ theme }) => theme.spacing(10)};
+        }
+    }
+`;
+
+export const ListStyle = styled(List)`
+    ${({ theme }) => theme.breakpoints.up("md")}{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: ${({ theme }) => theme.spacing(7)};
+    }
+`;
+
+export const AvartStyled = styled(Avatar)`
+    background-color: transparent;
+    border: 2px solid currentColor;
+    margin-right: ${({ theme }) => theme.spacing(2)};
+    box-sizing: content-box;
+
+    i {
+        font-size: 25px;
+    }
+
+    ${({ theme }) => theme.breakpoints.up("md")}{
+        padding: ${({ theme }) => theme.spacing(2)};
+        margin-right: ${({ theme }) => theme.spacing(4)};
+        
+        i {
+            font-size: 50px;
+        };
+    };
+`;
+
+export const ListItemTextStyled = styled(ListItemText)`
+    .MuiListItemText-primary {
+        font-weight: bold;
+    };
+ 
+    .MuiListItemText-secondary {
+        color: ${({ theme }) => theme.palette.common.white};
+    };
+`;
